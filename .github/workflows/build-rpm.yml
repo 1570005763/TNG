@@ -53,15 +53,15 @@ jobs:
           mkdir -p $GITHUB_WORKSPACE/rpmbuild/SOURCES/
           cp -r /tmp/trusted-network-gateway-*.tar.gz $GITHUB_WORKSPACE/rpmbuild/SOURCES/
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: rpm-packages
-          if-no-files-found: error
-          path: |
-            ./rpmbuild/SOURCES/trusted-network-gateway-*.tar.gz
-            ./rpmbuild/SRPMS/*.src.rpm
-            ./rpmbuild/RPMS/*/*.rpm
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: rpm-packages
+      #     if-no-files-found: error
+      #     path: |
+      #       ./rpmbuild/SOURCES/trusted-network-gateway-*.tar.gz
+      #       ./rpmbuild/SRPMS/*.src.rpm
+      #       ./rpmbuild/RPMS/*/*.rpm
 
   test:
     strategy:
